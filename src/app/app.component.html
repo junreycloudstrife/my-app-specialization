@@ -1,3 +1,56 @@
-<app-first></app-first>
-<app-second></app-second>
-<router-outlet></router-outlet>
+<!-- Interpolation example -->
+<div>
+    <h3>Interpolation example</h3>
+    <h1>{{title}}</h1>    
+    <h2>This my First Angular Project</h2>
+</div>
+
+
+<!-- Property binding example -->
+<div>
+    <h3>Property binding example</h3>
+    <p>The Sample button is disabled</p>
+
+    <button [disabled]="isDisabled">Sample</button>
+</div>
+
+
+<!-- Event binding example -->
+<div>
+    <h3>Event binding example</h3>
+    <p>Will print on the console when Sample button is clicked</p>
+
+    <button (click)="sampleClick()">Sample</button>
+</div>
+
+
+<!-- Two-way binding example -->
+<div>
+    <h3>Two-way binding example</h3>
+    <p>Update the Score by entering a number or clicking +/- button</p>
+    <label for="numberInput">Score </label>
+    <input name="numberInput" type="number" [(ngModel)]= "inputValue">
+    <button (click)="addEvent()">+</button>
+    <button (click)="subtractEvent()">-</button>
+
+</div>
+
+<!-- Input parameter example -->
+<div>
+    <h3>Input parameter example</h3>
+    <label for="number-value">AppComponent numberValue: {{numberValue}} </label>
+    <br>
+    <br>
+    <app-first [firstInput]="numberValue"></app-first>
+</div>
+
+<!-- Output parameter example -->
+<div>
+    <h3>Output parameter example</h3>
+    <p>AppComponent</p>
+    <p>Event received?: {{isEventReceived}}</p>
+    <br>
+    <br>
+    <app-second (secondOutput)="receiveEvent()"></app-second>
+</div>
+

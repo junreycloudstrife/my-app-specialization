@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent {
+  @Output() secondOutput = new EventEmitter();
 
+  passEvent(){
+    this.secondOutput.emit();
+  }
 }
