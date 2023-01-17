@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from './student';
 
 @Component({
   selector: 'app-root',
@@ -6,35 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // Interpolation example
   title = 'Specialization'; 
+  studentsList: Student[] = [
+    {
+      id:0,
+      lastName: "Penduko",
+      firstName: "Pedro",
+      age: 20,
+      nationality: "Filipino",
+      gender: "Male"
+    },
+    {
+      id:1,
+      lastName: "Uzumaki",
+      firstName: "Naruto",
+      age: 18,
+      nationality: "Japanese",
+      degree: "Ninja",
+      gender: "Male"
+    },
+    {
+      id:2,
+      lastName: "Dalisay",
+      firstName: "Ricardo",
+      age: 30,
+      nationality: "Filipino",
+      degree: "Police",
+      gender: "Male"
+    }
+  ]
 
-  // Property binding example
-  isDisabled = true; 
-
-  // Event binding example
-  sampleClick(){
-    console.log("Sample button is clicked!");
-  }
-
-  // Two-way binding example
-  inputValue = 0; 
-
-  addEvent(){
-    this.inputValue++;
-  }
-
-  subtractEvent(){
-    this.inputValue--;
-  }
-
-  // Input parameter example
-  numberValue = 10;
-
-  // Output parameter example
-  isEventReceived = "Not yet!";
-
-  receiveEvent(){
-    this.isEventReceived = "Event from SecondComponent received";
-  }
 }
