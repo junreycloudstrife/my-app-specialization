@@ -3,6 +3,14 @@
     <h2>This my First Angular Project</h2>
 </div>
 
-<div *ngFor="let student of studentsList">
-    <app-student [studentIn]="student"></app-student>
+<div *ngIf="!isAddStudent">
+    <h2>Students List</h2>
+    <button (click)="addNewStudent()">Add New Student</button>
+    <div *ngFor="let student of studentsList">
+        <app-student [studentIn]="student"></app-student>
+    </div>    
+</div>
+
+<div *ngIf="isAddStudent">
+    <app-add-student (studentOut)="addStudent($event)"></app-add-student>
 </div>

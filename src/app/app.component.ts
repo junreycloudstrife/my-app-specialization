@@ -8,6 +8,7 @@ import { Student } from './student';
 })
 export class AppComponent {
   title = 'Specialization'; 
+  isAddStudent = false;
   studentsList: Student[] = [
     {
       id:0,
@@ -37,4 +38,13 @@ export class AppComponent {
     }
   ]
 
+  addStudent(student: Student){
+    // console.log(student);
+    this.studentsList.push(student);
+    this.isAddStudent = false;
+  }
+
+  addNewStudent(){
+    this.isAddStudent = true;
+  }
 }
